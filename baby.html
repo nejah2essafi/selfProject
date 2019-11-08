@@ -6,38 +6,74 @@
 	<title></title>
 </head>
 <body>
-	<section id="baby-details">
+<header id="header" class="site-header">
+	<div class="header-container">
+
+		<div class="site-branding">
+				<img class="site-branding__logo" src="picture\logo2.png">
+		</div>
+
+		<div class="menus-container">
+        	<ul class="categorical-menu main-menu float-left">
+			<li class="item_left categorical-menu__item text-green" >Baby</li>
+			<li class="item_left categorical-menu__item text-lightpurple" id="vaccination-section" > Vaccination</li>
+
+			<li class="item_left categorical-menu__item text-lightblue"></li>
+			<li class="item_left categorical-menu__item text-mediumyellow">Mama</li>
+			</ul>	
+		</div>
+	</div>
+</header>
+<div id="container" >
+	<div>
+ 		<img class="site_background"   src="picture/homepage.jpg">  
+	</div> 
+	<div>
+	<section id ="my_vaccination" style="margin-top: 600px;">
 
 		<div id="baby-data">
 			<div class="first-name">
 				<p>Firstname:</p>
 				<input class="firstname-input" type="text" placeholder="Enter Your Baby First Name">	
 			</div>
-
 			<div class="last-name">
 				<p>Lastname:</p>
 				<input class="lastname-input" type="text" placeholder="Enter Your Baby Last Name">	
 			</div>
 
-		<div class="gender">
-			<p> Gender:</p>
-			<input  id="male-id" type="radio" name="gender"> <label for="male">Male</label>
-			<input  id="female-id" type="radio" name="gender"> <label for="Female">Female</label>	
-    </div>
+			<div class="gender">
+				<p> Gender:</p>
+				<input  id="male-id" type="radio" name="gender"> <label for="male">Male</label>
+				<input  id="female-id" type="radio" name="gender"> <label for="Female">Female</label>	
+    		</div>
 
-    <div class="date">
-    	<input class= "date-input" type="date" >
-    </div >
+    		<div class="date">
+    			<input class= "date-input" type="date" id="date-id">
+    		</div >
 
-	</div>	
+    		<div class="age">
+    			<input class= "age-input" type="text" id="age-id">
+    		</div >
+
+    		 <button type="button" onclick="getinfo();">GO</button>
+
+		</div>	
 	 </section>
+
+
+
+</div>
 	<section id= "baby-section"> </section>
-	<
-	<section id= "vaccination-section"></section>
+	<section >dghdlfhgldhglsdhlgsh</section>
 	<section id= "card"><section>
 
-<script type="text/javascript" src="install https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" ></script>
+
+
+
+</div>
+
+<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript" src="baby.js"></script>
 
 
 </body>
