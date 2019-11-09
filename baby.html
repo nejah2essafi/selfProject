@@ -15,57 +15,201 @@
 
 		<div class="menus-container">
         	<ul class="categorical-menu main-menu float-left">
-			<li class="item_left categorical-menu__item text-green" >Baby</li>
+			<li class="item_left categorical-menu__item text-green" id="baby-section">Baby</li>
 			<li class="item_left categorical-menu__item text-lightpurple" id="vaccination-section" > Vaccination</li>
 
 			<li class="item_left categorical-menu__item text-lightblue"></li>
 			<li class="item_left categorical-menu__item text-mediumyellow">Mama</li>
 			</ul>	
 		</div>
+		<div class="panier">
+			<img src="picture/panier2.png" width="40" height="40">
+			<input id="sum" value="0" disabled />
+			<input id="tot" value="0" disabled >$
+			<button class="add_item" onclick="deletecard()">
+				<img src="picture/delete.png" width="20" height="20">
+			</button>
+		</div>
+
 	</div>
 </header>
-<div id="container" >
+<div id="container" style="background-color: aliceblue;" >
 	<div>
  		<img class="site_background"   src="picture/homepage.jpg">  
 	</div> 
-	<div>
-	<section id ="my_vaccination" style="margin-top: 600px;">
+<div>
 
-		<div id="baby-data">
-			<div class="first-name">
-				<p>Firstname:</p>
-				<input class="firstname-input" type="text" placeholder="Enter Your Baby First Name">	
-			</div>
-			<div class="last-name">
-				<p>Lastname:</p>
-				<input class="lastname-input" type="text" placeholder="Enter Your Baby Last Name">	
-			</div>
+<section id ="baby_food" style="margin-top: 600px;">
+ <h2 class="categorical-menu__item text-green">Baby Food</h2>
+<img src="picture/allergyFilter.svg" width="30" height="30">
+	<select name="allergy" id="myselect" onchange="filter()">
+		<option value="none">Allergy Filter</option>
+		<option value="dairyfree<">dairy free</option>
+		<option value="eggfree">egg free</option>
+		<option value="fishfree">fish free</option>
+		<option value="glutenfree">gluten free</option>
+	</select>
 
-			<div class="gender">
-				<p> Gender:</p>
-				<input  id="male-id" type="radio" name="gender"> <label for="male">Male</label>
-				<input  id="female-id" type="radio" name="gender"> <label for="Female">Female</label>	
-    		</div>
+<table >
+	<tr>
+		<th>Age</th>
+		<th>Foods</th>
+	</tr>	
+	<tr>
+		<td>0-4 Month</td>
+		<td>
+			<ul>
+				<li id="egg"> product 1 (10 $) <img src="picture/bananepadding.jpg" height="60" width="60">
+					<button class="add_item" onclick="increment(10)"> <img src="picture/add.png" height="20" width="20" > </button>
+				</li>
+				<li id="fish"> product 2 (20 $)<img src="picture/milk1.jpg" height="60" width="60">
+					<button class="add_item" onclick="increment(20)" > <img src="picture/add.png" height="20" width="20" > </button>
+				</li>
 
-    		<div class="date">
-    			<input class= "date-input" type="date" id="date-id">
-    		</div >
+				<li id="gluten"> product 3 (30 $)<img src="picture/milk.jpg" height="60" width="60">
+					<button class="add_item" onclick="increment(30)"> <img src="picture/add.png" height="20" width="20" > </button>	
+				</li>	
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>4-6 Month</td>
+		<td>
+			<ul>
+				<li id="egg"> product 4 (10 $) <img src="picture/bananepadding.jpg" height="60" width="60">
+					<button class="add_item"  onclick="increment(10)"> <img src="picture/add.png" height="20" width="20" > </button>	
+				</li>
+				<li id="gluten"> product 5 (15 $) <img src="picture/milk.jpg" height="60" width="60">
+					<button class="add_item"  onclick="increment(15)"> <img src="picture/add.png" height="20" width="20" > </button>
+				</li>
+				<li id="fish"> product 6 (70 $) <img src="picture/milk1.jpg" height="60" width="60">
+					<button class="add_item"  onclick="increment(70)"> <img src="picture/add.png" height="20" width="20" > </button>
+				</li>	
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>6-9 Month</td>
+		<td>
+			<ul>
+				<li id="dairy"> product 7 (20 $)<img src="picture/compote.jpg" height="60" width="60">
+					<button class="add_item"  onclick="increment(20)" > <img src="picture/add.png" height="20" width="20" > </button>
+				</li>
+				<li id="fish"> product 8 (30 $)<img src="picture/compote2.jpg" height="60" width="60">
+					<button class="add_item"  onclick="increment(30)" > <img src="picture/add.png" height="20" width="20" > </button>
+				</li>
+				<li id="egg"> product 9 (10 $)<img src="picture/compote3.jpg" height="60" width="60">
+					<button class="add_item"  onclick="increment(10)"> <img src="picture/add.png" height="20" width="20" > </button>
+				</li>	
+			</ul>
+		</td>
+	</tr>
+	<tr>	
+		<td>9-12 Month</td>
+		<td>
+			<ul>
+				<li id="dairy"> product 10 (20 $) <img src="picture/h1.jpg" height="60" width="60">
+					<button class="add_item"  onclick="increment(20)"> <img src="picture/add.png" height="20" width="20" > </button>
+				</li>
+				<li id="fish"> product 11 (10 $) <img src="picture/h2.jpg" height="60" width="60">
+					<button class="add_item"  onclick="increment(10)"> <img src="picture/add.png" height="20" width="20" > </button>
+				</li>
+				<li id="egg"> product 12 (30 $) <img src="picture/h3.jpg" height="60" width="60">
+					<button class="add_item"  onclick="increment(30)"> <img src="picture/add.png" height="20" width="20" > </button>
+				</li>	
+			</ul>
+		</td>
+	</tr>
+</table>
+</section>
 
-    		<div class="age">
-    			<input class= "age-input" type="text" id="age-id">
-    		</div >
 
-    		 <button type="button" onclick="getinfo();">GO</button>
 
+<section id ="my_vaccination" >
+	<div class="filter_age">
+		
+  <h2 class="categorical-menu__item text-lightpurple">Vaccination</h2>
+  <label>Choose Age : <label>
+  <label>
+    <input type="checkbox" class="radio" value="8W" id="8W" onclick="show('a2','a3','a4','a1')" checked="checked" />8 weeks</label>
+  <label>
+    <input type="checkbox" class="radio" value="12W" id="12W"  onclick="show('a1','a3','a4','a2')" />12 weeks</label>
+  <label>
+    <input type="checkbox" class="radio" value="16W" id="16W" onclick="show('a1','a2','a4','a3')"/>16 weeks</label>
+
+    <label>
+    <input type="checkbox" class="radio" value="1Y" id="1Y" onclick="show('a1','a3','a2','a4')" />1 year</label>
+	</div>
+
+<div class="vaccination_data" >
+		<div id="a1"  >
+			
+	<ul>
+				<li>6-in-1 vaccine</li>
+				<li>PCV (pneumococcal) vaccine</li>
+				<li>RV (rotavirus) vaccine</li>
+				<li>MenB vaccine</li>
+			</ul>
+		</div>
+		<div id="a2" >
+		<ul>
+			<li>6-in-1 vaccine – 2nd dose</li>
+			<li>RV (rotavirus) vaccine – 2nd dose</li>
+		</ul>	
+		</div>
+		<div id="a3" >
+		<ul>
+			<li>6-in-1 vaccine – 3rd dose</li>
+			<li>PCV (pneumococcal) vaccine – 2nd dose</li>
+			<li>MenB vaccine – 2nd dose</li>
+		</ul>
+		</div>
+		<div id="a4" >
+			<ul>
+				<li>Hib/MenC vaccine given as a single jab containing vaccines against meningitis C (1st dose) and Hib (4th dose)</li>
+				<li>MMR vaccine (measles, mumps and rubella), given as a single jab</li>
+				<li>PCV (pneumococcal) – 3rd dose</li>
+				<li>MenB vaccine – 3rd dose</li>
+			</ul>
+			
+		
+		
+		
+		</div>
 		</div>	
-	 </section>
+	</section>
 
+
+<section id="mama" style="margin-top: 50px; text-align: center;" >
+	 <h2 class="categorical-menu__item text-mediumyellow">Happy Mama </h3>
+	<div class="banner-links up">
+               <div class="master-banner desklay" id="main">
+        <div class="master-hero brand-master">
+         
+            			            <div class="banner-links">
+                <div class="bottom left">
+                    <video controls src="picture/videoplayback.mp4" type="video/mp4"> 
+
+ 						<span class="triangle">                       
+                        <img class="alignnone size--image-3571" role="img" src="https://www.happyfamilyorganics.com/wp-content/uploads/2018/05/poup-video.svg" alt="">
+                        </span>
+                    </video>
+                       
+                    
+                   
+                    <span class="mob-video-title"></span>
+                </div>
+            </div>
+
+    </div>
+
+
+
+</section>
 
 
 </div>
-	<section id= "baby-section"> </section>
-	<section >dghdlfhgldhglsdhlgsh</section>
-	<section id= "card"><section>
+
 
 
 
